@@ -1,0 +1,14 @@
+app:
+  logging_level: INFO
+  bot:
+    name: "name_bot"
+    token: "bot_token"  
+    webhook_base_url: "https://nerona.fun/llm_bot"
+    tg_polling: true # telegram connection parameter.
+  mongodb:
+    connection_string: "mongodb://llm:llm_mongo_pass@mongodb/?retryWrites=true&w=majority"
+    name: "llm_db"
+  openai:
+    api_key: "open_ai_api_chatgpt_key"
+  speechace:
+    api_key: "open_ai_api_tts_stt_key"
