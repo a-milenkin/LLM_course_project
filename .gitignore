@@ -1,6 +1,8 @@
 mongodb/
 mongodb-backup/
 .env
-config.yaml
+*config.yaml
 .idea
 delete*
+.env
+.env.development
