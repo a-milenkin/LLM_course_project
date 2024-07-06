@@ -520,22 +520,6 @@ class UserDAO(BaseDBDAO):
 
 
 
-    async def _check_field_exist(self, field_name):
-        document = await self.db[self.COLLECTION_NAME].find_one({field_name: {"$exists": True}})
-        return document is not None
-
-    async def add_new_field(self, field_name, default_value=None):
-        if not self._check_field_exist(field_name):
-            await self.db[self.COLLECTION_NAME].update_many({}, {"$set": {field_name: default_value}})
-
-    async def add_new_user_messages_field(self, field_name, default_value=None):
-        # Обновить каждый словарь внутри списка, добавив новое поле с заданным значением
-        update_script = {"$set": {f"messages.$[elem].{field_name}": default_value}}
-        # Применить обновление только к элементам, где нет нового поля
-        array_filters = [{f"elem.{field_name}": {"$exists": False}, "elem.role": "user"}]
-        await self.db[self.COLLECTION_NAME].update_many({}, update_script, array_filters=array_filters)
-
-
 def generate_random_user():
     user = UserData(
         user_id=random.randint(1, 100000),

@@ -2,7 +2,7 @@ from models.app import App
 from telebot import types
 from telebot.async_telebot import AsyncTeleBot
 
-from routes.texts import after_finish_text, hints_text
+from routes.texts import hints_text
 from utils.functions import pop_from_dict
 from utils.gpt import get_last_transcript, get_last_transcript_in_ru, voice_chat, get_feedback
 from utils.markups import create_suggests_markup
@@ -11,21 +11,18 @@ from utils.structures import UserData
 
 async def get_transcript_en(message: types.Message, bot: AsyncTeleBot):
 
-
     last_transcript = await get_last_transcript(message)
     await bot.send_message(text=last_transcript, chat_id=message.chat.id)
 
 
 async def get_transcript_ru(message: types.Message, bot: AsyncTeleBot):
  
-
     last_transcript_in_ru = await get_last_transcript_in_ru(message)
     await bot.send_message(text=last_transcript_in_ru, chat_id=message.chat.id)
 
 
 async def get_hints(message: types.Message, bot: AsyncTeleBot):
  
-
     data = await App().Dao.user.find_by_user_id(message.from_user.id)
     user = UserData(**data)
     temp_data = user.temp_data
@@ -40,6 +37,7 @@ async def get_hints(message: types.Message, bot: AsyncTeleBot):
             temp_data['suggest_id']
         )
         return
+
     if temp_data.get('hints'):
         await bot.send_message(
             text=hints_text,
@@ -85,14 +83,28 @@ async def finish_conv(message: types.Message, bot: AsyncTeleBot):
             "temp_data": await pop_from_dict(user.temp_data, ['hints', 'transcript_in_ru', 'suggest', 'suggest_id'])
         }
     )
+
+    after_finish_text = 'Генерирую рекомендации!'
     await bot.send_message(
         text=after_finish_text,
         chat_id=message.chat.id,
         reply_markup=types.ReplyKeyboardRemove()
     )
+
     if len(user.messages[user.first_message_index:]) > 1:  # if dialog is not empty
         await bot.send_message(
             text=(await get_feedback(message.from_user.id)),
             chat_id=message.chat.id,
             reply_markup=types.ReplyKeyboardRemove()
         )
+
+        await bot.send_message(
+            text='Жми /start чтоб начать новый диалог!',
+            chat_id=message.chat.id,
+        )
+        return 0
+
+    await bot.send_message(
+        text='Диалог слишком короткий. Давай поговорим еще?',
+        chat_id=message.chat.id,
+    )

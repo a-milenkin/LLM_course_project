@@ -78,9 +78,6 @@ async def main(argv):
     
     # mongo migrations
     # await migrate_users()
-    await app.Dao.user.add_new_field('bot_role', 'english tutor')
-    await app.Dao.user.add_new_user_messages_field('tokens', 0)
-    
     # mongo migrations
     #await migrate_users()
 
@@ -206,13 +203,6 @@ async def main(argv):
         )
 
 
-        ######### callbacks register ##########
-
-        bot.register_callback_query_handler(
-            routes.avatar.start_conversation_callback,
-            lambda call: call.data.startswith("suggest"),
-            pass_bot=True,
-        )
 
         ############### profile ###############
 

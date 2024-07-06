@@ -1,7 +1,7 @@
 from telebot.types import InlineKeyboardMarkup, ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardButton
 
 from routes.texts import en_transcript_text, ru_transcript_text, sos_text, rating_text, finish_text
-from utils.callback_factories import SuggestCallbackData, RolesCallbackData
+from utils.callback_factories import SuggestCallbackData
 
 
 def create_conv_reply_markup():

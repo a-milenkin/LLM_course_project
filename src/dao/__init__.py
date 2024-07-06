@@ -7,7 +7,7 @@ from dao.user_dao import UserDAO
 @dataclass
 class DAO:
     user: UserDAO
-
+    
     @property
     def dao_list(self) -> list[BaseDAO]:
         return list(filter(lambda dao: isinstance(dao, BaseDAO), self.__dict__.values()))
