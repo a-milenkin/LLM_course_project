@@ -4,21 +4,25 @@
 
 
 # С использованием Docker (рекомендуется)
-```
-Запуск сборки
+python```
+# Клонирование проекта
+git clone https://github.com/a-milenkin/LLM_course_project.git
+cd LLM_course_project
+
+# Запуск сборки
 sudo docker compose up -d --build``
 
-Запуск после сборки
+# Запуск после сборки
 docker compose start
 
-Просмотр логов
+# Просмотр логов
 docker ps -a 
 docker logs -f контейнер_id
 
-Выключение
+# Выключение
 docker compose stop
 
-Перезапуск
+# Перезапуск без сборки
 docker compose restart
 ```
 
