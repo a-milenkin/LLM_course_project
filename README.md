@@ -39,19 +39,6 @@ https://t.me/Speakadora_bot
 
 ```
 
-
-# Запуск вне Docker контейнера
-
-### Клонирование проекта
-``git clone https://github.com/a-milenkin/LLM_course_project.git``
-
-``cd LLM_course_project``
-### Установка зависимостей
-``python3 -m pip install  -U --no-cache-dir -r requirements.txt -c constraints.txt``
-
-Установка зависимостей
-``python3 /src/utils/main.py`` 
-
 # С использованием Docker (рекомендуется)
 ## Запуск сборки
 ``sudo docker compose up -d --build``
@@ -61,3 +48,21 @@ https://t.me/Speakadora_bot
 ``docker compose stop``
 ## Просмотр логов
 ``docker logs -f контейнер_id``
+
+# Запуск вне Docker контейнера
+
+Клонирование проекта
+
+``git clone https://github.com/a-milenkin/LLM_course_project.git``
+
+``cd LLM_course_project``
+
+Установка зависимостей
+
+``python3 -m pip install  -U --no-cache-dir -r requirements.txt -c constraints.txt``
+
+Запуск проекта
+
+``python3 /src/utils/main.py``
+
+
