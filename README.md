@@ -40,29 +40,35 @@ https://t.me/Speakadora_bot
 ```
 
 # С использованием Docker (рекомендуется)
-## Запуск сборки
+Запуск сборки
+
 ``sudo docker compose up -d --build``
-## Запуск после сборки
+
+Запуск после сборки
+
 ``docker compose start``
-## Выключение
+
+Выключение
+
 ``docker compose stop``
-## Просмотр логов
+
+Просмотр логов
+
 ``docker logs -f контейнер_id``
 
 # Запуск вне Docker контейнера
 
+
+```
 Клонирование проекта
-
-``git clone https://github.com/a-milenkin/LLM_course_project.git``
-
-``cd LLM_course_project``
+git clone https://github.com/a-milenkin/LLM_course_project.git
+cd LLM_course_project
 
 Установка зависимостей
-
-``python3 -m pip install  -U --no-cache-dir -r requirements.txt -c constraints.txt``
+python3 -m pip install  -U --no-cache-dir -r requirements.txt -c constraints.txt
 
 Запуск проекта
-
-``python3 /src/utils/main.py``
+python3 /src/utils/main.py
+```
 
 
