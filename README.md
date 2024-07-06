@@ -40,21 +40,25 @@ https://t.me/Speakadora_bot
 ```
 
 # С использованием Docker (рекомендуется)
+```
 Запуск сборки
-
-``sudo docker compose up -d --build``
+sudo docker compose up -d --build``
 
 Запуск после сборки
-
-``docker compose start``
-
-Выключение
-
-``docker compose stop``
+docker compose start
 
 Просмотр логов
+docker ps -a 
+docker logs -f контейнер_id
 
-``docker logs -f контейнер_id``
+Выключение
+docker compose stop
+
+Перезапуск
+docker compose restart
+
+
+```
 
 # Запуск вне Docker контейнера
 
