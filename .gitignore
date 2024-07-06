@@ -3,3 +3,4 @@ mongodb-backup/
 .env
 config.yaml
 .idea
+delete*
