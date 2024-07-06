@@ -1,5 +1,42 @@
 # tg_bot_template
-https://t.me/Speakadora_bot
+
+Пример запущенного проекта https://t.me/Speakadora_bot
+
+
+# С использованием Docker (рекомендуется)
+```
+Запуск сборки
+sudo docker compose up -d --build``
+
+Запуск после сборки
+docker compose start
+
+Просмотр логов
+docker ps -a 
+docker logs -f контейнер_id
+
+Выключение
+docker compose stop
+
+Перезапуск
+docker compose restart
+```
+
+# Запуск вне Docker контейнера
+
+
+```
+Клонирование проекта
+git clone https://github.com/a-milenkin/LLM_course_project.git
+cd LLM_course_project
+
+Установка зависимостей
+python3 -m pip install  -U --no-cache-dir -r requirements.txt -c constraints.txt
+
+Запуск проекта
+python3 /src/utils/main.py
+```
+
 ### Project structure
 
 ```  
@@ -38,41 +75,4 @@ https://t.me/Speakadora_bot
     └───swagger.yaml                 # web api docs
 
 ```
-
-# С использованием Docker (рекомендуется)
-```
-Запуск сборки
-sudo docker compose up -d --build``
-
-Запуск после сборки
-docker compose start
-
-Просмотр логов
-docker ps -a 
-docker logs -f контейнер_id
-
-Выключение
-docker compose stop
-
-Перезапуск
-docker compose restart
-
-
-```
-
-# Запуск вне Docker контейнера
-
-
-```
-Клонирование проекта
-git clone https://github.com/a-milenkin/LLM_course_project.git
-cd LLM_course_project
-
-Установка зависимостей
-python3 -m pip install  -U --no-cache-dir -r requirements.txt -c constraints.txt
-
-Запуск проекта
-python3 /src/utils/main.py
-```
-
 
