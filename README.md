@@ -23,14 +23,10 @@ https://t.me/Speakadora_bot
     ├───models                       # Place any model classes here: object data sctuctures, system classes, db models
     │   └───app.py                   # Global App singleton, inherits dict. Use it to access modules and save/share context
     │
-    ├───mongo_migrations             # Scripts for db consistency
-    │   └───
-    │
     ├───routes                       # Place telegram endpoint handlers here. 
     │   └───example.py               # Example telegram bot endpoint
     │
-    ├───services                     # Place any non-bot logic and modules here
-    │   └───__init__.py              # Services namespace class here. Dont forget do add created module 
+    add created module 
     │
     ├───utils                        # Place any helpers here
     │   └───
@@ -46,13 +42,15 @@ https://t.me/Speakadora_bot
 
 # Запуск вне Docker контейнера
 
-## Клонирование проекта
+### Клонирование проекта
 ``git clone https://github.com/a-milenkin/LLM_course_project.git``
+
 ``cd LLM_course_project``
-## Установка зависимостей
+### Установка зависимостей
 ``python3 -m pip install  -U --no-cache-dir -r requirements.txt -c constraints.txt``
-## Установка зависимостей
-``python3 /src/utils/main.py``
+
+Установка зависимостей
+``python3 /src/utils/main.py`` 
 
 # С использованием Docker (рекомендуется)
 ## Запуск сборки
