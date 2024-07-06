@@ -4,7 +4,7 @@
 
 
 # С использованием Docker (рекомендуется)
-python```
+```
 # Клонирование проекта
 git clone https://github.com/a-milenkin/LLM_course_project.git
 cd LLM_course_project
