@@ -4,6 +4,9 @@
 
 
 # С использованием Docker (рекомендуется)
+
+# Добавьте нужные ключи и токены в config.yaml 
+
 ```
 # Клонирование проекта
 git clone https://github.com/a-milenkin/LLM_course_project.git
