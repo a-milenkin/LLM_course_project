@@ -3,7 +3,7 @@ app:
   bot:
     name: "name_bot"
     token: "bot_token"  
-    webhook_base_url: "https://nerona.fun/llm_bot"
+    webhook_base_url: "https://nerona.fun/llm_bot" # адрес примем веб хуков, если делаете на пуллинг
     tg_polling: true # telegram connection parameter.
   mongodb:
     connection_string: "mongodb://llm:llm_mongo_pass@mongodb/?retryWrites=true&w=majority"
